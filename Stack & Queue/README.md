@@ -4,6 +4,29 @@ This folder contains clean, standard Python implementations of linear data struc
 
 ---
 
+## 📈 Visual Representations
+
+### Stack (LIFO - Last In, First Out)
+```text
+   |      |
+   | [30] |  <- Top / Pop / Push
+   | [20] |
+   | [10] |
+   +------+
+```
+
+### Queue (FIFO - First In, First Out)
+```text
+           [Enqueue] -> [Rear]  [30] [20] [10]  [Front] -> [Dequeue]
+```
+
+### Deque (Double-Ended Queue)
+```text
+   [Insert/Delete] <-> [Front]  [30] [20] [10]  [Rear] <-> [Insert/Delete]
+```
+
+---
+
 ## 📚 Concepts Covered
 
 Linear data structures organize elements sequentially. Stacks and Queues constrain where insertion and deletion can occur to guarantee specific retrieval patterns.
