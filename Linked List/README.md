@@ -4,6 +4,27 @@ This folder contains clean, standard Python implementations of linear linked dat
 
 ---
 
+## 📈 Visual Representations
+
+### Singly Linked List
+```text
+[Head] -> [ Data | Next ] -> [ Data | Next ] -> [ Data | Next ] -> None
+```
+
+### Doubly Linked List
+```text
+[Head] <=> [ Prev | Data | Next ] <=> [ Prev | Data | Next ] -> None
+```
+
+### Circular Linked List
+```text
+[Head] -> [ Data | Next ] -> [ Data | Next ] -> [ Data | Next ] 
+   ^                                                   |
+   +---------------------------------------------------+
+```
+
+---
+
 ## 📚 Concepts Covered
 
 A Linked List is a linear data structure where elements are not stored in contiguous memory locations. Instead, each element (node) consists of:
