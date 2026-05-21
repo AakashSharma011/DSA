@@ -71,5 +71,7 @@ obj.insertAtEnd(20)
 obj.insertAtEnd(30)
 obj.insertAtBeg(5)
 obj.insertAtPos(15,10)
+# Test inserting after the last node
+obj.insertAtPos(35,30)
 obj.deleteAtPos(20)
 obj.printLL()
