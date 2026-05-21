@@ -13,7 +13,7 @@ class Deque:
     
     def deleteAtFront(self):
         if(self.isEmpty()):
-            print("Deque us empty")
+            print("Deque is empty")
         else:
             return self.items.pop(0)
 
