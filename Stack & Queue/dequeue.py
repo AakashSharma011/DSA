@@ -13,13 +13,13 @@ class Deque:
     
     def deleteAtFront(self):
         if(self.isEmpty()):
-            print("Deque is empty")
+            raise IndexError("delete from an empty deque")
         else:
             return self.items.pop(0)
 
     def deleteAtEnd(self):
         if(self.isEmpty()):
-            print("Deque is empty")
+            raise IndexError("delete from an empty deque")
         else:
             return self.items.pop()
 
