@@ -24,15 +24,20 @@ class SinglyLinkedList:
         temp.next=self.head
         self.head=temp
 
-         # when we want to insert a node at the given position of the already crea list
+    # when we want to insert a node at the given position of the already crea list
     def insertAtPos(self,value,x):
-        temp=Node(value)
+        if self.head is None:
+            print("List is empty")
+            return
         t1=self.head
-        while(t1.next!=None):
-            if(t1.data==x):
-                temp.next=t1.next
-                t1.next=temp
-            t1=t1.next
+        while t1 is not None:
+            if t1.data == x:
+                temp = Node(value)
+                temp.next = t1.next
+                t1.next = temp
+                return
+            t1 = t1.next
+        print("Value not found in list")
 
 # when we want to delete a node at the given position of the already crea list
     def deleteAtPos(self,value):
@@ -66,5 +71,7 @@ obj.insertAtEnd(20)
 obj.insertAtEnd(30)
 obj.insertAtBeg(5)
 obj.insertAtPos(15,10)
+# Test inserting after the last node
+obj.insertAtPos(35,30)
 obj.deleteAtPos(20)
 obj.printLL()
