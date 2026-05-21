@@ -8,10 +8,13 @@ class CircularQueue:
     def isEmpty(self):
         return self.front == -1
 
+    def isFull(self):
+        return (self.rear + 1) % self.size == self.front
+
     def enqueue(self, value):
 
         # Queue Full
-        if (self.rear + 1) % self.size == self.front:
+        if self.isFull():
             print("Queue is full")
 
         # First Element
@@ -45,3 +48,9 @@ class CircularQueue:
             self.items[self.front] = None
             self.front = (self.front + 1) % self.size
             return temp
+
+    def peek(self):
+        if self.isEmpty():
+            print("Queue is empty")
+            return None
+        return self.items[self.front]
