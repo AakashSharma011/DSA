@@ -48,3 +48,9 @@ class CircularQueue:
             self.items[self.front] = None
             self.front = (self.front + 1) % self.size
             return temp
+
+    def peek(self):
+        if self.isEmpty():
+            print("Queue is empty")
+            return None
+        return self.items[self.front]
