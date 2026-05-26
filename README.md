@@ -40,6 +40,17 @@ DSA/
 │   ├── circular_ll.py     # Circularly linked nodes (ends join head)
 │   └── README.md          # Visualizations & operations complexity
 │
+├── Recursion/             # Self-calling functions and recursive paradigms
+│   ├── factorial.py       # Linear recursive factorial
+│   ├── fibonacci.py       # Tree-recursive Fibonacci sequence
+│   └── README.md          # Call stack visualizations & recursion depth notes
+│
+├── Trees/                 # Hierarchical nodes and traversals
+│   ├── bst.py             # Binary Search Tree (Insert & Search)
+│   ├── deletion_bst.py    # Node deletion algorithms in BST
+│   ├── traversal.py       # Pre-order, In-order, and Post-order traversals
+│   └── README.md          # Tree diagrams, traversal lists, and complexities
+│
 ├── .gitignore             # Standard Python ignore rules
 └── README.md              # Project overview & roadmap (this file)
 ```
@@ -50,7 +61,7 @@ DSA/
 
 Below is the status of implementations currently covered in the repository.
 
-| Category | Data Structure | File Path | Status | Key Complexity |
+| Category | Topic / Structure | File Path | Status | Key Complexity |
 | :--- | :--- | :--- | :--- | :--- |
 | **Stack & Queue** | Stack (LIFO) | [`stack.py`](./Stack%20%26%20Queue/stack.py) | 🟢 Complete | Push/Pop: $O(1)$ |
 | **Stack & Queue** | Queue (FIFO) | [`queue.py`](./Stack%20%26%20Queue/queue.py) | 🟢 Complete | Enqueue/Dequeue: $O(1)$ |
@@ -59,6 +70,11 @@ Below is the status of implementations currently covered in the repository.
 | **Linked List** | Singly Linked List | [`singly_ll.py`](./Linked%20List/singly_ll.py) | 🟢 Complete | Traverse: $O(N)$, Insert/Delete: $O(1)$ |
 | **Linked List** | Doubly Linked List | [`doubly_ll.py`](./Linked%20List/doubly_ll.py) | 🟢 Complete | Bidirectional traverse: $O(N)$ |
 | **Linked List** | Circular Linked List | [`circular_ll.py`](./Linked%20List/circular_ll.py) | 🟢 Complete | Ring structure |
+| **Recursion** | Factorial | [`factorial.py`](./Recursion/factorial.py) | 🟢 Complete | Time: $O(N)$ \| Space: $O(N)$ |
+| **Recursion** | Fibonacci | [`fibonacci.py`](./Recursion/fibonacci.py) | 🟢 Complete | Time: $O(2^N)$ \| Space: $O(N)$ |
+| **Trees** | Binary Search Tree | [`bst.py`](./Trees/bst.py) | 🟢 Complete | Insert/Search: $O(\log N)$ average |
+| **Trees** | BST Deletion | [`deletion_bst.py`](./Trees/deletion_bst.py) | 🟢 Complete | Delete Node: $O(\log N)$ average |
+| **Trees** | Tree Traversal | [`traversal.py`](./Trees/traversal.py) | 🟢 Complete | Pre/In/Post traversal: $O(N)$ |
 
 ---
 
@@ -67,12 +83,14 @@ Below is the status of implementations currently covered in the repository.
 ### 🧠 Core Concepts To Focus On:
 - **Pointer Manipulation:** Managing references (`next` and `prev`) in linked lists without causing segmentation faults or memory leaks.
 - **Ring Buffer Logic:** Implementing index wrapping `(index + 1) % size` to optimize space in Circular Queues.
-- **Constrained Access:** Restricting reads and writes to specific boundaries (e.g., top of stack, ends of deque) to enforce runtime contracts.
+- **Recursion Limits:** Being aware of recursion depth and the stack trace when implementing recursive solutions (e.g. Factorial, Fibonacci).
+- **BST Balancing:** Understanding that simple BST operations degrade to $O(N)$ in skewed trees, which leads to the necessity of AVL or Red-Black Trees.
 
 ### ⏱️ Time Complexity Quick Cheat-Sheet
 - **Arrays/Lists:** Access: $O(1)$ | Search: $O(N)$ | Insertion: $O(N)$
 - **Linked Lists:** Access: $O(N)$ | Search: $O(N)$ | Insertion (at head/given node): $O(1)$
 - **Stack / Queue:** All insertion/deletion operations: $O(1)$
+- **Binary Search Tree:** Average search/insert/delete: $O(\log N)$ | Worst-case: $O(N)$
 
 ---
 
@@ -91,10 +109,11 @@ Please ensure your code is clean, utilizes proper docstrings, and includes inlin
 ---
 
 ## 🗺️ Roadmap & Future Plans
-- [ ] Add Binary Trees and Binary Search Trees (BST)
+- [x] Add Binary Search Tree (BST) operations and tree traversals
+- [x] Add basic Recursion implementations (Factorial, Fibonacci)
 - [ ] Implement Graph Algorithms (BFS, DFS, Dijkstra, Kruskal's)
 - [ ] Add Sorting & Searching Algorithms (QuickSort, MergeSort, Binary Search)
-- [ ] Add Dynamic Programming (DP) paradigms and recursion templates
+- [ ] Add Dynamic Programming (DP) paradigms
 
 ---
 

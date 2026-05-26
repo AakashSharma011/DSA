@@ -129,3 +129,22 @@ cython_debug/
 *.swp
 *.swo
 *tempCodeRunnerFile*
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Logs and databases
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary/cache files
+.eslintcache
+.parcel-cache
+.cache/
+.temp/
+tmp/
+temp/
+
