@@ -95,3 +95,28 @@ if __name__ == '__main__':
     print("BST after deletion of 15 (In-order traversal):")
     inorder(root)
     print()
+
+
+def get_successor(root):
+    root=root.right
+    while(root!=None and root.left!=None):
+        root=root.left
+    return root
+
+def delete(root,value):
+    if(root==None):
+        return root
+    if(root.data>value):
+        root.left=delete(root.left,value)
+    elif(root.data<value):
+        root.right=delete(root.right,value)
+    else:
+        if(root.left==None):
+            return root.right
+        if(root.right==None):
+            return root.left
+        else:
+            suc=get_successor(root)
+            root.data=suc.data
+            root.right=delete(root.right,suc.data)
+    return root
