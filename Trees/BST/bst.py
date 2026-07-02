@@ -3,6 +3,8 @@ class Node:
         self.data = value
         self.left = None
         self.right = None
+    
+    #Insert function to insert a new node with the given value in the BST
 
 def insert(root,value):
     if (root == None):
@@ -15,6 +17,7 @@ def insert(root,value):
         root.right=insert(root.right,value)
     return root
 
+# Search function to search for a node with the given value in the BST
 def Search(root,value):
     if (root == None):
         print("Element Not Found")
@@ -29,6 +32,7 @@ def Search(root,value):
     
 
 
+ #Inorder function to perform inorder traversal of the BST
 def Inorder(root):
     if (root!=None):
         Inorder(root.left)
