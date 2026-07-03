@@ -1,5 +1,8 @@
-arr=[1,1,2,3,3,4,4]
-Xor=0
-for i in range(len(arr)):
-    Xor=Xor^arr[i]
-print("The number that appears only once is:",Xor)
+class Solution(object):
+    def singleNumber(self, nums):
+        ans = 0
+
+        for num in nums:
+            ans ^= num
+
+        return ans
