@@ -1,28 +1,25 @@
-def search(arr, k):
-    low, high = 0, len(arr) - 1
+def search(self, nums, target):
+        low = 0
+        high = len(nums) - 1
 
-    while low <= high:
-        mid = (low + high) // 2
+        while low <= high:
+            mid = low + (high - low) // 2
 
-        # Target mil gaya
-        if arr[mid] == k:
-            return mid
+            if nums[mid] == target:
+                return mid
 
-        # Left half sorted hai
-        if arr[low] <= arr[mid]:
-            if arr[low] <= k <= arr[mid]:
-                high = mid - 1
+            # Left half is sorted
+            if nums[low] <= nums[mid]:
+                if nums[low] <= target < nums[mid]:
+                    high = mid - 1
+                else:
+                    low = mid + 1
+
+            # Right half is sorted
             else:
-                low = mid + 1
+                if nums[mid] < target <= nums[high]:
+                    low = mid + 1
+                else:
+                    high = mid - 1
 
-        # Right half sorted hai
-        else:
-            if arr[mid] <= k <= arr[high]:
-                low = mid + 1
-            else:
-                high = mid - 1
-
-    return -1
-arr = [4, 5, 6, 7, 0, 1, 2]
-k = 0
-print(search(arr, k))
+        return -1
