@@ -1,18 +1,26 @@
 class Solution(object):
     def findMaxLength(self, nums):
-        prefix = 0
-        hashmap = {0: -1}   # prefix sum 0 first seen before array starts
-        ans = 0
+        zero = 0
+        one = 0
+
+        hashmap = {}
+        res = 0
 
         for i in range(len(nums)):
             if nums[i] == 0:
-                prefix -= 1
+                zero += 1
             else:
-                prefix += 1
+                one += 1
 
-            if prefix in hashmap:
-                ans = max(ans, i - hashmap[prefix])
+            diff = zero - one
+
+            if diff == 0:
+                res = max(res, i + 1)
+                continue
+
+            if diff in hashmap:
+                res = max(res, i - hashmap[diff])
             else:
-                hashmap[prefix] = i
+                hashmap[diff] = i
 
-        return ans
+        return res
