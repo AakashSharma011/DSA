@@ -1,81 +1,28 @@
 class Graph:
+    def __init__(self):
+        self.adjlist={}
 
-    def __init__(self) -> None:
+    def add_vertex(self,vertex):
+        if vertex not in self.adjlist:
+            self.adjlist[vertex]=[]
 
-        self.adj_list: dict[int, list[int]] = {}
-
-    
-
-    def add_vertex(self, vertex: int) -> None:
-
-        """
-
-        Adds a vertex to the graph if it doesn't already exist.
-
-        """
-
-        if vertex not in self.adj_list:
-
-            self.adj_list[vertex] = []
-
-    
-
-    def add_edge(self, src: int, dest: int) -> None:
-
-        """
-
-        Adds an undirected edge between src and dest.
-
-        Automatically adds the vertices if they do not exist.
-
-        """
-
+    def add_edge(self,src,dest):
         self.add_vertex(src)
-
         self.add_vertex(dest)
+        self.adjlist[src].append(dest) 
+        self.adjlist[dest].append(src)  # undirected graph
 
-        self.adj_list[src].append(dest)
+    def print_graph(self):
+        for vertex in self.adjlist:
+            print(vertex,"->",end=" ")
+            print(" ".join(map(str,self.adjlist[vertex])))
 
-        self.adj_list[dest].append(src)
-
-
-
-    def print_graph(self) -> None:
-
-        """
-
-        Prints the adjacency list representation of the graph.
-
-        """
-
-        for vertex in sorted(self.adj_list.keys()):
-
-            print(f"{vertex} --> {self.adj_list[vertex]}")
-
-
-
-
-
-if __name__ == '__main__':
-
-    g = Graph()
-
-    g.add_edge(1, 2)
-
-    g.add_edge(1, 3)
-
-    g.add_edge(1, 4)
-
-    g.add_edge(3, 4)
-
-    g.add_edge(2, 3)
-
-    g.add_edge(4, 5)
-
-    g.add_edge(5, 3)
-
-    
-
-    print("Graph Adjacency List:")
-
-    g.print_graph()
+g=Graph()
+g.add_edge(0,1)
+g.add_edge(0,4)
+g.add_edge(1,2)
+g.add_edge(1,3)
+g.add_edge(1,4)
+g.add_edge(2,3)
+g.add_edge(3,4)
+g.print_graph()
