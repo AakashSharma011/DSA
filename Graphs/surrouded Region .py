@@ -1,6 +1,6 @@
 class Solution(object):
     def solve(self, board):
-        if not board and not board[0]:
+        if not board or not board[0]:
             return
         m,n= len(board),len(board[0])
         x=[-1,1,0,0]
@@ -12,7 +12,7 @@ class Solution(object):
                 nc=c+y[k]
 
                 if 0<=nr<m and 0<=nc<n and board[nr][nc]=='O':
-                    dfs[nr][nc]
+                    dfs(nr,nc)
             
         for i in range(m):
             if board[i][0]=='O':
