@@ -1,13 +1,11 @@
-def peakIndexInMountainArray(self, arr):
+class Solution(object):
+    def findPeakElement(self, nums):
         low=0
-        high=len(arr)-1
-        res=-1
-        while low<=high:
-            mid=low+(high-low)//2
-            
-            if arr[mid]<arr[mid+1]:
-                low=mid+1
+        high=len(nums)-1
+        while low<high:
+            mid= low + (high-low)//2
+            if nums[mid]>nums[mid+1]:
+                high=mid
             else:
-                res=mid
-                high=mid-1
-        return res
+                low=mid+1
+        return low
